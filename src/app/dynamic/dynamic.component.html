@@ -1,0 +1,7 @@
+<form #form="ngForm" ((submit))="validate()">
+  <input name="name" type="text" [(ngModel)]="name" [maxlength]="max" />
+  <button>Submit</button>
+  {{ form.valid }}
+  {{ form.status }}
+</form>
+{{ currentDate | date: 'short' }}
