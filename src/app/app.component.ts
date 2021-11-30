@@ -3,6 +3,7 @@ import { BaseComponent } from './base.component';
 import { User } from './app.interface';
 import { AppService } from './app.service';
 import { DynamicComponent } from './dynamic/dynamic.component';
+import { CoreService } from 'core';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ export class AppComponent extends BaseComponent {
   title = 'angular13-app';
   @ViewChild('placeholder', { read: ViewContainerRef, static: true })
   placeholder!: ViewContainerRef;
-  constructor(private service: AppService) {
+  constructor(private service: AppService, private coreService: CoreService) {
     super();
   }
   override async init() {
